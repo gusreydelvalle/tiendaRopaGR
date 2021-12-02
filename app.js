@@ -8,6 +8,10 @@ const app = express();
 //Puerto
 const port = 2022;
 
+//Llamado al motor de plantillas de EJS
+app.set('view engine', 'ejs');
+app.set('views',__dirname + 'views');
+
 //Configurar carpeta publica y configurar un middleware
 app.use(express.static(__dirname + "/public"))
 
