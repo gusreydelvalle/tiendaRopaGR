@@ -1,0 +1,186 @@
+@charset "ISO-8859-1";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: calibri, sans serif;
+    color:#04717a;
+}
+
+.titulo {
+    background: linear-gradient(#001b1e, #014049);
+    color: white;
+}
+
+h1 {
+    width: 1000px;
+    margin: auto;
+    font-size: 22px;
+    font-weight: normal;
+    padding: 20px 0px 10px 0px;
+}
+
+header {
+    border-bottom: 1px solid #04717a;
+    padding: 10px 0 10px 0;
+}
+
+nav {
+    width: 1000px;
+    margin: auto;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+}
+
+nav ul li {
+    list-style: none;
+    margin-right: 35px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    color:#04717a;
+}
+
+nav ul li a:hover {
+    background-color: #014049;
+    color: white;
+    padding: 10px 0 10px 0;
+    transition: ease-in-out 0.2s;
+}
+
+form {
+    width: 1100px;
+    margin: auto;
+}
+
+.consultaC {
+    font-size: 20px;
+    padding: 10px 0 10px 0;
+    margin-top: 30px;
+}
+
+.consultaC input {
+    display: inline-block;
+    font-size: 20px;
+}
+
+.consultaC button {
+    width: 100px;
+    height: 28px;
+    font-size: 18px;
+    color: white;
+    background: linear-gradient(#001b1e, #014049);
+    border: none;
+    border-radius: 5px;
+}
+
+.consultaC button:hover {
+    background-color: rgb(149, 149, 149);
+    color: rgb(100, 100, 100);
+}
+
+.productos {
+    width: 900px;
+    margin: auto;
+    display: flex;
+}
+
+.productos input {
+    height: 28px;
+}
+
+.codigos input {
+    width: 100%;
+    margin: 5px 0 5px 0;
+}
+
+.consultarP button {
+    margin: 5px -25px 5px 10px;
+    width: 100px;
+    height: 28px;
+    font-size: 18px;
+    color: white;
+    background: linear-gradient(#001b1e, #014049);
+    border: none;
+    border-radius: 5px;
+}
+
+.consultarP button:hover {
+    background-color: rgb(149, 149, 149);
+    color: rgb(100, 100, 100);
+}
+
+.nombreP input {
+    width: 100%;
+    margin: 5px 0 5px 0;
+}
+
+.cant input {
+    width: 50px;
+    margin: 5px 0px 5px 10px;
+}
+
+.valorT input {
+    width: 150px;
+    margin: 5px 0 5px 0;
+}
+
+.totalesPadre {
+    width: 1046px;
+    margin: 25px auto;
+}
+
+.totales {
+    width: 600px;
+    margin-left: auto;
+    display: flex;
+}
+
+.totales input {
+    height: 28px;
+    margin-bottom: 10px;
+}
+
+.confirmar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.confirmar button {
+    width: 100px;
+    height: 28px;
+    font-size: 18px;
+    color: white;
+    background: linear-gradient(#001b1e, #014049);
+    border: none;
+    border-radius: 5px;
+}
+
+.confirmar button:hover {
+    background-color: rgb(149, 149, 149);
+    color: rgb(100, 100, 100);
+}
+
+.totalesLabels {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 20px;
+    width: 250px;
+    margin-left: 20px;
+}
+
+.totalesInputs input {
+    width: 200px;
+    display: inline-block;
+}

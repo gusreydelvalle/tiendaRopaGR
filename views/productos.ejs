@@ -1,18 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda De Ropa GR</title>
-</head>
-<body>
-    <h1 align = "center">Mi página de PRODUCTOS</h1>
-    <h2 align = "center"><%=titulo%></h2>
+<%- include('./templates/cabecera',{tituloWeb:'Productos'}) %>
+<%- include('./templates/titulo',{tituloSeccion:'Productos'}) %>
+<%- include('./templates/navbar') %>
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, minima.</p>
-    <hr></hr>
-    <a href="/">Inicio</a>
-    
+<link rel="stylesheet" href="css/estilosProductos.css">
+
+<div class="contendor-fluid">
+    <form action="Productos" method="post" enctype="multipart/form-data">
+        <h2>Cargar listado de productos</h2>
+        <div class="contenedorIN">
+            <div>
+                <input id="examinar" type="file" name="archivo" value="Buscar" >
+                <button type="submit " name="cargar ">Cargar</button>
+            </div>
+        </div>
+    </form>
+    <form action="Productos" method="post">
+        <div class="Down ">
+            <h2>Actualizar Productos</h2>
+            <div class="contenedorDown ">
+                <div>
+                    <label>Codigo</label>
+                    <input type="text" name="codigo" value="" >>
+                    <input type="hidden" name="code" value="">
+                    <button type="submit" name="consultar">Consultar</button>
+                </div>
+                <div>
+                    <label>Nombre</label> <input type="text" name="nombre" value="">
+                </div>
+                <div>
+                    <label>Precio</label> <input type="number" name="precio" value="">
+                </div>
+            </div>
+            <div  class="botones ">
+                <div>
+                    <button type="submit" name="actualizar">Actualizar</button>
+                </div>
+                <div>
+                    <button type="submit" name="cancelar">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
 </body>
 </html>

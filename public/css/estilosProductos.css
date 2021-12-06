@@ -1,0 +1,176 @@
+@charset "ISO-8859-1";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: calibri, sans serif;
+}
+
+.titulo {
+    background: linear-gradient(#001b1e, #014049);
+    color: white;
+}
+
+h1 {
+    width: 1000px;
+    margin: auto;
+    font-size: 22px;
+    font-weight: normal;
+    padding: 20px 0px 10px 0px;
+}
+
+header {
+    border-bottom: 1px solid #04717a;
+    padding: 10px 0 10px 0;
+}
+
+nav {
+    width: 1000px;
+    margin: auto;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+}
+
+nav ul li {
+    list-style: none;
+    margin-right: 35px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    color:#04717a;
+}
+
+nav ul li a:hover {
+    background-color: #014049;
+    color: white;
+    padding: 10px 0 10px 0;
+    transition: ease-in-out 0.2s;
+}
+
+.contenedor-fluid {
+    border-top: solid gray 1px;
+    background-color: indigo;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    width: 1000px;
+    color:#04717a;
+    margin: 30px auto 0 auto;
+    font-family: Calibri, sans-serif;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.contenedorIN {
+    display: flex;
+    justify-content: center;
+    width: 1000px;
+    margin: 20px auto 0 auto;
+}
+
+#examinar {
+    width: 400px;
+    height: 28px;
+    color:#04717a;
+    font-weight: lighter;
+}
+
+.contenedorIN input {
+    font-size: 20px;
+    width: 150px;
+    height: 40px;
+    background: #F2F2F2;
+    color:#04717a;
+    border-radius: 5px;
+    border: none;
+}
+
+.contenedorIN button {
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    color: white;
+    background: linear-gradient(#001b1e, #014049);
+    border: none;
+    border-radius: 5px;
+}
+
+.contenedorIN button:hover {
+    background-color: rgb(149, 149, 149);
+    color: rgb(100, 100, 100);
+}
+
+.Down {
+    background-color: #F2F2F2;
+    color: rgb(110, 110, 110);
+    margin-top: 25px;
+    padding: 10px 0 20px 0;
+}
+
+.contenedorDown {
+    display: flex;
+    justify-content: center;
+    width: 1000px;
+    margin: 20px auto 0 auto;
+}
+
+.contenedorDown label {
+    display: inline-block;
+    color:#04717a;
+    font-size: 20px;
+}
+
+.contenedorDown input {
+    display: inline-block;
+    font-size: 20px;
+    width: 200px;
+}
+
+.contenedorDown button{
+	width: 150px;
+    height: 40px;
+    font-size: 20px;
+    color: white;
+    background: linear-gradient(#001b1e, #014049);
+    border: none;
+    border-radius: 5px;
+}
+
+.contenedorDown button:hover{
+	background-color: rgb(149, 149, 149);
+    color: rgb(100, 100, 100);
+}
+
+.botones {
+    width: 250px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.botones button {
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    color: white;
+    background: linear-gradient(#001b1e, #014049);
+    border: none;
+    border-radius: 5px;
+    margin: 40px 10px 0 10px;
+    cursor: pointer;
+}
+
+.botones button:hover {
+    background-color: rgb(149, 149, 149);
+    color: rgb(100, 100, 100);
+}

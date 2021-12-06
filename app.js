@@ -34,12 +34,30 @@ app.get("/productos",(req,res)=>{
 });
 
 app.get("/clientes",(req,res)=>{
-    res.render("clientes", {tituloC: "Mi titulo Dinámico de Clientes"});
+    res.render("clientes", {tituloC: "Gestor Dinámico de Clientes"});
 });
 
 app.get("/usuarios",(req,res)=>{
     res.render("usuarios", {tituloU: "Mi titulo Dinámico de Usuarios"});
 });
+
+app.get("/proveedores",(req,res)=>{
+    res.render("proveedores", {tituloProv: "Gestor Dinámico de Proveedores"});
+});
+
+app.get("/ventas",(req,res)=>{
+    res.render("ventas");
+});
+
+app.get("/reportes",(req,res)=>{
+    res.render("reportes");
+});
+
+app.get("/login",(req,res)=>{
+    res.render("login",);
+});
+
+
 
 
 //Este era el llamado cuando tenia los datos en la carpeta public o cuando queria llamar un aviso
@@ -49,7 +67,7 @@ app.get("/productos",(req,res)=>{
 });*/
 
 app.use((req,res,next)=>{
-    res.status(404).sendFile(__dirname + "/public/404.html");
+    res.status(404).render("404",{titulo404: "Pagina dinamica no encontrada"} );
 })
 
 app.listen(port,()=>{

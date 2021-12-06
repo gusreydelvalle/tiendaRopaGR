@@ -1,0 +1,84 @@
+<%- include('./templates/navbar') %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="js/Ventas.js"></script>
+<title>Modulo Ventas</title>
+<link rel="stylesheet" href="css/estilosVentas.css">
+</head>
+<body>
+	
+
+	<div class="titulo">
+		<h1>Gestion de Ventas</h1>
+	</div>
+	
+
+    <form action="Ventas" method="post">
+        <div class="consultaC">
+            <label for="">Cedula</label>
+            <input type="text" name="cedulaCliente" value="" >
+            <input type="hidden" name="cCliente" value="">
+            
+            <label for="">Cliente</label>
+            <input type="text" name="nombreCliente" value="" >
+            <label for="">Consecutivo</label>
+            <input type="text" name="consecutivoVenta" value="">
+        </div>
+
+        <div class="productos">
+            <div class="codigos">
+                <input type="text" name="codigo1" value="" placeholder="Codigo del Producto 1">
+                <input type="text" name="codigo2" value="" placeholder="Codigo del Producto 2">
+                <input type="text" name="codigo3" value="" placeholder="Codigo del Producto 3">
+            </div>
+            <div class="consultarP">
+                <button type="submit" name="consultarPd1">Consultar</button>
+                <button type="submit" name="consultarPd2">Consultar</button>
+                <button type="submit" name="consultarPd3">Consultar</button>
+            </div>
+            <div class="nombreP">
+                <input type="text" name="nombrePd1" value=">" placeholder="Nombre del Producto 1">
+                <input type="text" name="nombrePd2" value="" placeholder="Nombre del Producto 2">
+                <input type="text" name="nombrePd3" value="" placeholder="Nombre del Producto 3">
+            </div>
+            <div class="cant">
+                <input type="text" name="cant1" value="">
+                <input type="text" name="cant2" value="">
+                <input type="text" name="cant3" value="">
+            </div>
+            <div class="valorT">
+                <input type="text" name="valorT1" value="">
+                <input type="hidden" name="precio1" value="">
+                <input type="hidden" name="iva1" value="">
+                <input type="text" name="valorT2" value="">
+                <input type="hidden" name="precio2" value="">
+                <input type="hidden" name="iva2" value="">
+                <input type="text" name="valorT3" value="">
+                <input type="hidden" name="precio3" value="">
+                <input type="hidden" name="iva3" value="">
+            </div>
+        </div>
+        <div class="totalesPadre">
+            <div class="totales">
+                <div class="confirmar">
+                    <button type="submit" name="confirmar">Confirmar</button>
+                </div>
+                <div class="totalesLabels">
+                    <label for="">Total Venta =</label>
+                    <label for="">Total IVA =</label>
+                    <label for="">Total a Pagar =</label>
+                </div>
+                <div class="totalesInputs">
+                    <input type="text" name="totalVenta" value="">
+                    <input type="text" name="totalIVA" value="">
+                    <input type="text" name="totalPagar" value="">
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
