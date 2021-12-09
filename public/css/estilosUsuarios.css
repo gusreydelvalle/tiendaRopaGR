@@ -1,9 +1,8 @@
-@charset "ISO-8859-1";
-
 * {
+	
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
+	box-sizing: content-box;
 }
 
 body {
@@ -64,19 +63,20 @@ nav ul li a:hover {
 .contenedorIN {
 	display: flex;
 	justify-content: space-between;
-	width: 850px;
+	width: 800px;
 	margin: 50px auto 0 auto;
 }
 
+
 .contenedorIN label {
-	display: block;
+	display: flex;
 	color:#04717a;
 	font-size: 20px;
 	margin-bottom: 15px;
 }
 
 .contenedorIN input {
-	display: block;
+	display: flex;
 	font-size: 20px;
 	width: 260px;
 	margin-bottom: 15px;
@@ -105,3 +105,7 @@ nav ul li a:hover {
 	background-color: rgb(149, 149, 149);
 	color: rgb(100, 100, 100);
 }
+
+
+.table
+{caption-side:bottom;border-collapse:collapse}caption{padding-top:.5rem;padding-bottom:.5rem;color:#6c757d;text-align:left}th{text-align:inherit;text-align:-webkit-match-parent}tbody,td,tfoot,th,thead,tr{border-color:inherit;border-style:solid;border-width:0}

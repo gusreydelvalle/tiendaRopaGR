@@ -1,3 +1,4 @@
+<%- include('./templates/titulo',{tituloSeccion:'Ventas'}) %>
 <%- include('./templates/navbar') %>
 
 <!DOCTYPE html>
@@ -5,16 +6,13 @@
 <head>
 <meta charset="ISO-8859-1">
 <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="js/Ventas.js"></script>
+
 <title>Modulo Ventas</title>
 <link rel="stylesheet" href="css/estilosVentas.css">
 </head>
 <body>
 	
 
-	<div class="titulo">
-		<h1>Gestion de Ventas</h1>
-	</div>
 	
 
     <form action="Ventas" method="post">
@@ -41,7 +39,7 @@
                 <button type="submit" name="consultarPd3">Consultar</button>
             </div>
             <div class="nombreP">
-                <input type="text" name="nombrePd1" value=">" placeholder="Nombre del Producto 1">
+                <input type="text" name="nombrePd1" value="" placeholder="Nombre del Producto 1">
                 <input type="text" name="nombrePd2" value="" placeholder="Nombre del Producto 2">
                 <input type="text" name="nombrePd3" value="" placeholder="Nombre del Producto 3">
             </div>

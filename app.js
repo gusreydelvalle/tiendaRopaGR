@@ -3,10 +3,29 @@
 
 const express = require("express");
 const { nextTick } = require("process");
+const bodyParser = require('body-parser');
 const app = express();
-
 //Puerto
 const port = 2022;
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+ 
+// parse application/json
+app.use(bodyParser.json());
+
+//Conectar a Base Datos 
+const mongoose = require ('mongoose');
+const usuario='';
+const password='';
+const dbName='tienda'; 
+
+const uri =  `mongodb://localhost:27017/tienda`
+
+mongoose.connect(uri,{useNewUrlParser:true, useUnifiedTopology:true})
+.then(()=> console.log('Estas conectado a la base de datos'))
+.catch(e=> console.log('el error de conexión es ',e));
+
 
 //Llamado al motor de plantillas de EJS
 app.set('view engine', 'ejs');
@@ -14,6 +33,12 @@ app.set('views',__dirname + '/views');
 
 //Configurar carpeta publica y configurar un middleware
 app.use(express.static(__dirname + "/public"))
+
+//Rutas web
+app.use('/', require('./router/rutasWeb'));
+app.use('/clientes', require('./router/clientes'));
+app.use('/usuarios', require('./router/usuarios'));
+
 
 //Llamado a la raiz del proyecto
 
@@ -24,38 +49,7 @@ app.use(express.static(__dirname + "/public"))
 })*/
 
 //configuracion de enrutamiento de paginas dinamicamente
-app.get("/",(req,res)=>{
-    res.render("index", {titulo: "Mi titulo Dinámico"});
-});
 
-//LLamadas dinamicas a traves de la herramienta EJS, 
-app.get("/productos",(req,res)=>{
-    res.render("productos", {tituloP: "Mi titulo Dinámico de Productos"});
-});
-
-app.get("/clientes",(req,res)=>{
-    res.render("clientes", {tituloC: "Gestor Dinámico de Clientes"});
-});
-
-app.get("/usuarios",(req,res)=>{
-    res.render("usuarios", {tituloU: "Mi titulo Dinámico de Usuarios"});
-});
-
-app.get("/proveedores",(req,res)=>{
-    res.render("proveedores", {tituloProv: "Gestor Dinámico de Proveedores"});
-});
-
-app.get("/ventas",(req,res)=>{
-    res.render("ventas");
-});
-
-app.get("/reportes",(req,res)=>{
-    res.render("reportes");
-});
-
-app.get("/login",(req,res)=>{
-    res.render("login",);
-});
 
 
 
