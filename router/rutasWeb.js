@@ -10,11 +10,6 @@ router.get("/productos",(req,res)=>{
     res.render("productos");
 });
 
-
-router.get("/usuarios",(req,res)=>{
-    res.render("usuarios");
-});
-
 router.get("/proveedores",(req,res)=>{
     res.render("proveedores");
 });

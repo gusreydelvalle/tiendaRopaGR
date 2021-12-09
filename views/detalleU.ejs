@@ -1,0 +1,95 @@
+<%- include('./templates/cabecera',{tituloWeb:'Detalle Usuarios'}) %>
+<%- include('./templates/footer'); %>
+
+    <div class="container" >
+        <h1 align="center" class="text-dark">Datos Usuarios</h1>
+        <% if (error) { %>
+            <p>
+                <%= mensaje %>
+            </p>
+            <a href="/usuarios" class="btn btn-dark btn-block">Volver a Usuarios</a>
+            <% } %>
+                <% if (!error) { %>
+
+                    <form id="formularioEditarU" data-id="<%= usuario.id %> ">
+                      <input type="text" class="form-control my-2" name="nombre" value="<%= usuario.nombre %> " id="nombreInput" > 
+                      <input type="text" class="form-control my-2" name="alias" value="<%= usuario.alias %> " id="aliasInput" >
+                      <input type="password" class="form-control my-2" name="password" value="<%= usuario.password %> " id="passwordInput" > 
+                      <button type="submit"
+                        class="btn btn-warning btn-block"  >
+                      Editar Usuario
+                    </button>  
+
+                    </form>
+                    
+                    <hr>
+                                <button 
+                                    class="btn btn-danger btn-sm mt-2"
+                                    id="btnEliminar"
+                                    data-id="<%= usuario.id %> "    >
+                                    Eliminar
+                                </button>
+
+                    <% } %>
+    </div>
+
+
+
+
+
+
+    <script>
+        // Aqui se captura lo que trae el boton eliminar  id = btnEliminar
+       const btnEliminar = document.querySelector('#btnEliminar') 
+       btnEliminar.addEventListener('click',async()=>{
+           console.log('haz dado click')//Aqui nos muestra en consola de navegador el mensaje cuando presionamos el botón
+           const id = btnEliminar.dataset.id
+           console.log('id', id)//Aqui nos pinta en consola del navegador el valor de lo que voy a eliminar
+           try {
+               const data = await fetch(`/usuarios/${id}`,{
+                   method : 'delete'
+               })
+             const res = await data.json() 
+             //console.log(res)
+             if (res.estado) {
+                 window.location.href = '/usuarios'
+             }else{
+                 console.log(res)
+             }
+           } catch (error) {
+               console.log(error)
+           }
+           
+       })
+       //Codgio de editar el dato en la base datos para unir con la ruta y el modelo
+       const formularioEditarU = document.querySelector('#formularioEditarU')
+       formularioEditarU.addEventListener('submit', async(e)=>{
+           e.preventDefault()
+           //console.log('submit')Aqui  probamos que el formulario Editar  traiga el submit
+           const nombre = formularioEditarU.elements['nombre'].value
+           const alias = document.querySelector('#aliasInput').value
+           const password = document.querySelector('#passwordInput').value
+           const id = formularioEditarU.dataset.id
+          // console.log(nombre, apellidos, cel, id) probamos que los datos estan cargando para editar
+          try {
+              const data = await fetch(`/usuarios/${id} `,{
+                  method : 'put',
+                  headers : {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({nombre, alias, password})
+              })
+              const res = await data.json()
+              if (res.estado) {
+                    window.location.href = '/usuarios'
+              } else {
+                  console.log(res)
+              }
+              console.log(res)
+          } catch (error) {
+              console.log(error)
+          }
+       })
+
+    </script>
+

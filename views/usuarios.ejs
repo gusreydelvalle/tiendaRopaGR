@@ -5,7 +5,7 @@
 <form>
 	<div class="container" >
 		<br>
-		<h2 align="center" class="text-dark">Datos Usuarios</h2>
+		<h2 align="center" class="text-danger">Datos de Usuario</h2>
 		
 		<a class="btn btn-success btn-block my-4" href="/usuarios/crearU">
 			Crear Nuevo Usuario
@@ -15,14 +15,14 @@
 				<tr>
 					<th scope="col"># Id</th>
 					<th scope="col">Nombre</th>
-					<th scope="col">Apellidos</th>
-					<th scope="col">Celular</th>
+					<th scope="col">Alias</th>
+					<th scope="col">Password</th>
 					<th scope="col">Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
 
-			<% /* %> 
+			
 				<% if (arrayUsuarios.length> 0) { %>
 					<% arrayUsuarios.forEach(usuario=> { %>
 						<tr>
@@ -33,22 +33,17 @@
 								<%= usuario.nombre %>
 							</td>
 							<td>
-								<%= usuario.apellidos %>
+								<%= usuario.alias %>
 							</td>
 							<td>
-								<%= usuario.cel %>
+								<%= usuario.password %>
 							</td>
-							<td><a href="clientes/<%= usuario.id %>"
+							<td><a href="usuarios/<%= usuario.id %>"
 								class="btn btn-warning btn-sm">Editar</a></td>
 						</tr>
 
 						<% }) %>
 							<% } %>
-							
-					<% */ %> 	
-
-	
-	
 
 	</tbody>
 </table>

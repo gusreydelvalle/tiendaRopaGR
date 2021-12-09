@@ -8,8 +8,9 @@ router.get('/', async (req, res) => {
         const arrayUsuariosDB = await Usuario.find();
         console.log(arrayUsuariosDB)
         res.render("usuarios", {
-            arrayUsuarios: arrayUsuariosDB 
+           
             //Aqui igualamos la estructura de datos con lo traido de la base datos
+            arrayUsuarios: arrayUsuariosDB 
 
         })
 
@@ -18,7 +19,7 @@ router.get('/', async (req, res) => {
     }
 
 })
-//Aqui vamos a llamar la vista crear de nuevos clientes
+//Aqui vamos a llamar la vista crear de nuevos usuarios
 router.get('/crearU', (req,res)=>{
     res.render('crearU')
 }) 
@@ -36,18 +37,18 @@ router.post('/', async(req, res)=>{
         console.log(error)
     }
 })
-//Detallar el cliente y unificar un documento para editar y para borrar
+//Detallar el usuario y unificar un documento para editar y para borrar
 router.get('/:id', async(req, res)=>{
     const id= req.params.id
     try{
         const usuarioDB = await Usuario.findOne({_id: id})
         console.log(usuarioDB)
-        res.render('detalle',{
+        res.render('detalleU',{
             usuario : usuarioDB,
             error:false
         })
     }catch(error){
-        res.render('detalle',{
+        res.render('detalleU',{
            error: true,
            mensaje: 'No se encuentra el id escogido'
     })
