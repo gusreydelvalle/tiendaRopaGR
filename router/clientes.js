@@ -1,7 +1,7 @@
 //Este es el controlador principal de clientes
 const express = require('express');
 const router = express.Router();
-//Aca llamaremos el modelo de datos
+//Aca llamaremos el modelo de datos de suarios 
 const Cliente = require('../models/cliente');
 router.get('/', async (req, res) => {
     try {
@@ -27,10 +27,12 @@ router.post('/', async(req, res)=>{
     const body = req.body
     
     try{
-            const clienteDB = new Cliente(body)//Aqui recibo lo que trajo boy-parser
-            await clienteDB.save()//aqui lo guardo en la base datos
+            const clienteDB = new Cliente(body)//Aqui recibo lo que trajo body-parser
+            await clienteDB.save() //aqui se guarda el dato en la base datos
             console.log(body) //Aqui me muestra en consola lo que guardo en la base datos
+
             //await Cliente.create(body) Esta es la segunda forma de guardar datos en la base de datos
+
             res.redirect('/clientes')
     }catch(error){
         console.log(error)
@@ -49,7 +51,7 @@ router.get('/:id', async(req, res)=>{
     }catch(error){
         res.render('detalle',{
            error: true,
-           mensaje: 'No se encuentra el id escogido'
+           mensaje: 'el id no existe'
     })
 }
 })

@@ -1,10 +1,10 @@
 
 //Aca crearemos el modelo de datos del usuario
 const mongoose = require('mongoose');
-const SchemaU = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 //Aqui creamos el esquema de datos del cliente
-const usuarioSchema = new SchemaU({
+const usuarioSchema = new Schema({
         nombre: String,
         alias: String,
         password: String 

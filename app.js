@@ -23,7 +23,7 @@ const dbName='tienda';
 const uri =  `mongodb://localhost:27017/tienda`
 
 mongoose.connect(uri,{useNewUrlParser:true, useUnifiedTopology:true})
-.then(()=> console.log('Estas conectado a la base de datos'))
+.then(()=> console.log('Conexion con la base de datos de manera exitosa'))
 .catch(e=> console.log('el error de conexión es ',e));
 
 

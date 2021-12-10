@@ -1,7 +1,8 @@
 //Este es el controlador principal de usuarios
 const express = require('express');
 const router = express.Router();
-//Aca llamaremos el modelo de datos
+
+//Aca llamaremos el modelo de datos de usuarios
 const Usuario = require('../models/usuario');
 router.get('/', async (req, res) => {
     try {
@@ -19,19 +20,19 @@ router.get('/', async (req, res) => {
     }
 
 })
-//Aqui vamos a llamar la vista crear de nuevos usuarios
+//vamos a llamar la vista crear de nuevos usuarios
 router.get('/crearU', (req,res)=>{
     res.render('crearU')
 }) 
-//Aqui vamos a llamar la ruta de los datos y conectar con la bd
+//vamos a llamar la ruta de los datos y conectar con la bd
 router.post('/', async(req, res)=>{
     const body = req.body
     
     try{
-            const usuarioDB = new Usuario(body)//Aqui recibo lo que trajo boy-parser
-            await usuarioDB.save()//aqui lo guardo en la base datos
-            console.log(body) //Aqui me muestra en consola lo que guardo en la base datos
-            //await Cliente.create(body) Esta es la segunda forma de guardar datos en la base de datos
+            const usuarioDB = new Usuario(body)// recibo lo que trajo boy-parser
+            await usuarioDB.save()// lo guardo en la base datos
+            console.log(body) // me muestra en consola lo que guardo en la base datos
+           
             res.redirect('/usuarios')
     }catch(error){
         console.log(error)

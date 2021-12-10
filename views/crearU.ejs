@@ -1,3 +1,10 @@
+<%- include('./templates/cabecera',{tituloWeb:'Crear Usuarios'}) %>
+<%- include('./templates/titulo',{tituloSeccion:'Creacion de Usuarios'}) %>
+<%- include('./templates/footer') %>
+
+
+
+
 <h1 align="center">Crear Usuario</h1>
 	<div class="container">
 	 <form action="/usuarios" method="post">
@@ -9,12 +16,12 @@
 		 <input type="text"
 		 placeholder="Agregar Alias del Usuario"
 		 class="form-control my-2"
-		 name="apellidos">
+		 name="alias">
  
 		 <input type="password"
 		 placeholder="Agregar Contraseña de Usuario"
 		 class="form-control my-2"
-		 name="cel">
+		 name="password">
 		 <button type="submit"
 		 class="btn btn-success btn-block">
 			 Agregar Usuario
